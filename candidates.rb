@@ -43,3 +43,12 @@ def average_age(people)
     people.map { |person| person[:age }.reduce(0) { |sum, num| sum + num } / people.size
 
 end
+
+def language_screening(people, language)
+    people.select do |person| 
+        person[:languages].map do |language| 
+            language.downcase
+        end
+        .include? (language.downcase)
+    end
+end
